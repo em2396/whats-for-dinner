@@ -16,10 +16,22 @@ body {
     height: 100vh
 }
 
+.choice-selection-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 .inline-block-left-side {
-    display: inline;
     background-color: rgba(225, 225, 225, .9);
-    height: 100px;
-    width: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px
 }
 

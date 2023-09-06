@@ -6,10 +6,15 @@ frosted white - rgba(225, 225, 225, .9);
 grey - #95a5a6;
 red - #ee5253 */
 
+
+.title {
+    background-color: ;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-image: url(/Users/emaleepoellot/mod1/whats-for-dinner/assets/burger-friends.jpg);
+    background-image: url(assets/burger-friends.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -23,15 +28,38 @@ body {
     height: 100%;
 }
 
+.inline-block-right-side,
 .inline-block-left-side {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
     background-color: rgba(225, 225, 225, .9);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    text-align: left;
+    border-radius: 0;
+    width: calc(50% - 20px)
 }
 
+
 h1 {
-    font-size: 24px
+    font-size: 30px
+}
+
+h2 {
+    font-size: 50px
+}
+
+#letsCook {
+    background-color: #0fb9b1;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px
 }
 

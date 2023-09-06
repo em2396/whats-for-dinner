@@ -1,7 +1,11 @@
 //QUERYSELECTORS HERE
 var letsCook = document.querySelector('#letsCook');
-
-
+var sideRadioButton = document.querySelector('#sideRadioButton');
+var mainRadioButton = document.querySelector('#mainRadioButton');
+var dessertRadioButton = document.querySelector('#dessertRadioButton');
+var entireMealRadioButton = document.querySelector('#entireMealRadioButton');
+var cookpotImage = document.querySelector('.cookpotImage');
+var dishResult = document.querySelector('#dishResult');
 
 //VARIABLE DECLARATIONS HERE
 var sides = [
@@ -73,21 +77,24 @@ function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
 }
 
-function generateRandomDish(event) {
-    if (event === 'Side'){
+function generateRandomDish() {
+    cookpotImage.classList.add('hidden');
+    var dishForTonight
+    if (sideRadioButton.checked) {
         var sideIndex = getRandomIndex(sides);
-        var tonightSide = sides[sideIndex];
-        return tonightSide;
-    } else if (event === 'Main Dish') {
-        var mainDishIndex = getRandomIndex(mains);
-        var tonightMain = mains[mainDishIndex];
-        return tonightMain;
-    } else if (event === 'Dessert') {
+        dishForTonight = sides[sideIndex];
+    } else if (mainRadioButton.checked) {
+        var mainIndex = getRandomIndex(mains);
+        dishForTonight = mains[mainIndex];
+    } else if (dessertRadioButton.checked) {
         var dessertIndex = getRandomIndex(desserts);
-        var tonightDessert = desserts[dessertIndex];
-        return tonightDessert;
+        dishForTonight = desserts[dessertIndex];
+    } else if (entireMealRadioButton.checked) {
+        var sideIndex = getRandomIndex(sides);
+        var mainIndex = getRandomIndex(mains);
+        var dessertIndex = getRandomIndex(desserts);
+        dishForTonight = mains[mainIndex] + ', ' + sides[sideIndex] + ', ' + desserts[dessertIndex];
     }
-    // } else if (event === 'Entire Meal') {
-
-    // }
+    dishResult.innerText = `You should make: ${dishForTonight}`
+    return dishForTonight;
 }

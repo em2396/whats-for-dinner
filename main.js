@@ -94,6 +94,8 @@ function generateRandomDish() {
         var mainIndex = getRandomIndex(mains);
         var dessertIndex = getRandomIndex(desserts);
         dishForTonight = mains[mainIndex] + ', ' + sides[sideIndex] + ', ' + desserts[dessertIndex];
+    } else if (!entireMealRadioButton.checked || !sideRadioButton.checked || !mainRadioButton.checked || !dessertRadioButton.checked) {
+        alert(`Please select a dish type.`)
     }
     dishResult.innerText = `You should make: ${dishForTonight}`
     return dishForTonight;

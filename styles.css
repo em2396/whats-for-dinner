@@ -7,8 +7,10 @@ grey - #95a5a6;
 red - #ee5253 */
 
 
-.title {
-    background-color: ;
+header {
+    background-color: #0fb9b1;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -23,7 +25,6 @@ body {
 
 .two-boxes-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     align-items: center;
     height: 100%;
@@ -32,34 +33,31 @@ body {
 .inline-block {
     flex: 1;
     vertical-align: top;
+    justify-content: center;
     background-color: rgba(225, 225, 225, .9);
-    padding: 20;
-    margin: 50px;
-    border-radius: 10px;
-    text-align: left;
+    padding: 2%;
+    margin: 2%;
     border-radius: 0;
-    width: 900px;
-    height: 300px
+    text-align: left;
+    width: 100%;
 }
 
 .hidden {
     display: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 
 .cookpotImage {
-    z-index: 1;
     max-width: 100%;
+    height: auto;
     align-self: center;
 }
 
 
 h1 {
-    font-size: 30px
-}
-
-h2 {
-    font-size: 20px
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #letsCook {
@@ -72,5 +70,15 @@ h2 {
     font-size: 20px;
     padding: 20px;
     border-radius: 10px
+    font-family: 'Roboto', sans-serif;
 }
 
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+#dishResult {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px
+}

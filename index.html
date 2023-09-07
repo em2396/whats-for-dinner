@@ -7,7 +7,7 @@
   <body>
     <header>What's For Dinner?</header>
     <div class="two-boxes-container">
-      <div class="inline-block">
+      <div class="selection-container container" >
         <h1>What are you looking for?</h1>
           <label>
             <input type="radio" id="sideRadioButton" name="mealType" value="sideDish">Side
@@ -23,11 +23,10 @@
           </label><br><br>
           <button id="letsCook">LET'S COOK!</button>
       </div>
-      <div class="inline-block">
-        <div id="dishResult"></div>
-        <div id="cookpotImage">
-          <img src="assets/cookpot.svg" alt="Cookpot image" class="cookpotImage">
-        </div>
+      <div class="cookpot-container container">
+        <p id="youShouldMake" class="hidden">You should make:</p>
+        <p id="dishResult"></p>
+        <img id="cookpotImage" src="assets/cookpot.svg" alt="Cookpot image" class="cookpotImage">
       </div>
     </div>
   </body>

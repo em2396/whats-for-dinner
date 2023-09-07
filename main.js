@@ -1,3 +1,5 @@
+
+
 //QUERYSELECTORS HERE
 var letsCook = document.querySelector('#letsCook');
 var sideRadioButton = document.querySelector('#sideRadioButton');
@@ -6,6 +8,7 @@ var dessertRadioButton = document.querySelector('#dessertRadioButton');
 var entireMealRadioButton = document.querySelector('#entireMealRadioButton');
 var cookpotImage = document.querySelector('.cookpotImage');
 var dishResult = document.querySelector('#dishResult');
+var youShouldMake = document.querySelector('#youShouldMake');
 
 //VARIABLE DECLARATIONS HERE
 var sides = [
@@ -64,39 +67,42 @@ var desserts = [
     'Homemade Ice Cream'
 ];
 
-
 //EVENTLISTENERS HERE
 letsCook.addEventListener('click', generateRandomDish)
 
-
-
-//FUNCTIONS HERE
-
-//Create a function that picks a random index of a given array
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
 }
 
 function generateRandomDish() {
     cookpotImage.classList.add('hidden');
+    //dishResult.classList.remove('hidden');
+    youShouldMake.classList.remove('hidden');
     var dishForTonight
     if (sideRadioButton.checked) {
         var sideIndex = getRandomIndex(sides);
         dishForTonight = sides[sideIndex];
+        dishResult.innerText = `${dishForTonight}`
+        return dishForTonight;
     } else if (mainRadioButton.checked) {
         var mainIndex = getRandomIndex(mains);
         dishForTonight = mains[mainIndex];
+        dishResult.innerText = `You should make: ${dishForTonight}`
+        return dishForTonight;
     } else if (dessertRadioButton.checked) {
         var dessertIndex = getRandomIndex(desserts);
         dishForTonight = desserts[dessertIndex];
+        dishResult.innerText = `You should make: ${dishForTonight}`
+        return dishForTonight;
     } else if (entireMealRadioButton.checked) {
         var sideIndex = getRandomIndex(sides);
         var mainIndex = getRandomIndex(mains);
         var dessertIndex = getRandomIndex(desserts);
         dishForTonight = mains[mainIndex] + ', ' + sides[sideIndex] + ', ' + desserts[dessertIndex];
+        dishResult.innerText = `You should make: ${dishForTonight}`
+        return dishForTonight;
     } else if (!entireMealRadioButton.checked || !sideRadioButton.checked || !mainRadioButton.checked || !dessertRadioButton.checked) {
         alert(`Please select a dish type.`)
+        cookpotImage.classList.remove('hidden');
     }
-    dishResult.innerText = `You should make: ${dishForTonight}`
-    return dishForTonight;
 }
